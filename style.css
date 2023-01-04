@@ -1,0 +1,209 @@
+:root {
+  --primary_color_soft_blue: hsl(215, 51%, 70%);
+  --primary_color_cyan: hsl(178, 100%, 50%);
+  --color_Vdark_blueBG: hsl(217, 54%, 11%);
+  --color_Vdark_blueCARD: hsl(216, 50%, 16%);
+  --color_Vdark_blueLINE: hsl(215, 32%, 27%);
+  --color_white: hsl(0, 0%, 100%);
+
+  --fw_light: 300;
+  --fw_regular: 400;
+  --fw_semibold: 600;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ! Start here */
+
+body {
+  background-color: var(--color_Vdark_blueBG);
+  color: var(--color_white);
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  font-family: 'Outfit', sans-serif;
+  height: 95vh;
+}
+
+footer .attribution {
+  text-align: center;
+}
+
+.nft_module {
+  background-color: var(--color_Vdark_blueCARD);
+  max-width: 17.5em;
+  padding: 1em;
+  border-radius: 14px;
+  box-shadow: 0px 15px 10px 15px hsla(217, 51%, 8%, 0.46),
+    0px 10px 5px 35px hsla(215, 61%, 10%, 0.603);
+}
+
+.nft_module button {
+  border: 0;
+  border-radius: 5px;
+  position: relative;
+  background-color: transparent;
+}
+
+.nft_module button:hover {
+  cursor: pointer;
+}
+
+.nft_module button:is(:hover, :focus)::before {
+  content: "";
+  position: absolute;
+  background: url("images/icon-view.svg") no-repeat center;
+  background-color: rgba(0, 255, 255, 0.518);
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+}
+
+.equilibrium {
+  border-radius: 5px;
+  border: 0;
+}
+
+.column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nft_module h1 {
+  margin-block: 0.8em;
+}
+
+.nft_module h1 a {
+  color: var(--color_white);
+  font-size: 1.2rem;
+  font-weight: var(--fw_semibold);
+}
+
+.nft_module h1 a:is(:hover, :focus) {
+  color: var(--primary_color_cyan);
+}
+
+.nft_module .box_text {
+  color: var(--primary_color_soft_blue);
+  font-weight: var(--fw_light);
+  font-size: 14px;
+}
+
+.nft_module .eth_time {
+  margin-block: 1em;
+  font-size: 13px;
+}
+
+.nft_module .eth_text {
+  font-weight: var(--fw_semibold);
+  color: var(--primary_color_cyan);
+}
+
+.nft_module .time_text {
+  font-weight: var(--fw_light);
+  color: var(--primary_color_soft_blue);
+}
+
+.nft_module .column p {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.nft_module hr {
+  border: 0;
+  max-width: 100%;
+  height: 0.5px;
+  background-color: rgb(3, 92, 92);
+}
+
+.nft_module .author_module {
+  margin-block-start: 1em;
+  margin-block-end: 0.5em;
+}
+
+.nft_module .profile_img {
+  max-width: 1.6em;
+  border: 1.5px solid #fff;
+  border-radius: 50%;
+  margin-inline-end: 0.5em;
+}
+
+.nft_module .author_module p {
+  color: var(--primary_color_soft_blue);
+  font-size: 14px;
+  font-weight: var(--fw_light);
+  gap: 0.2em;
+}
+
+.nft_module .author_module p a {
+  color: var(--color_white); 
+}
+
+.nft_module .author_module p a:is(:hover, :focus) {
+  color: var(--primary_color_cyan);
+}
